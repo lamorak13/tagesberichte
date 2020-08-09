@@ -10,7 +10,7 @@ function SymptomsModal(props) {
 
   let sum = 0;
   for (const value of Object.values(report)) {
-    if (value == true) sum += 1;
+    if (value === true) sum += 1;
   }
 
   const style = {

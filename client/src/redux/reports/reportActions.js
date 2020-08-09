@@ -1,4 +1,11 @@
-import { GET_REPORTS, POST_REPORT, DELETE_REPORT, IS_LOADING, CHANGE_PERSON } from './reportTypes';
+import {
+  GET_REPORTS,
+  POST_REPORT,
+  DELETE_REPORT,
+  IS_LOADING,
+  CHANGE_PERSON,
+  CHANGE_POINTER,
+} from './reportTypes';
 import axios from 'axios';
 
 export const isLoading = () => {
@@ -39,5 +46,12 @@ export const changePerson = (person) => {
   return {
     type: CHANGE_PERSON,
     payload: person,
+  };
+};
+
+export const changePointer = (value) => {
+  return {
+    type: CHANGE_POINTER,
+    payload: value,
   };
 };

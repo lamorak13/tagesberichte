@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaAngleLeft, FaAngleRight, FaRegTrashAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReports, deleteReport } from '../redux/reports/reportActions';
+import { getReports, deleteReport, changePointer } from '../redux/reports/reportActions';
 import SympomsModal from './SymptomsModal';
 
 function CurrentReport() {
@@ -11,20 +11,11 @@ function CurrentReport() {
     dispatch(getReports());
   }, [dispatch]);
 
+  const pointer = useSelector((state) => state.reports.pointer);
   const person = useSelector((state) => state.reports.person);
   const reports = useSelector((state) => state.reports.items).filter(
     (report) => report.name === person
   );
-
-  let [pointer, setPointer] = useState(0);
-
-  function nextReport() {
-    setPointer(pointer + 1);
-  }
-
-  function prevReport() {
-    setPointer(pointer - 1);
-  }
 
   function getDateFromData(date) {
     const test = new Date(date);
@@ -90,14 +81,22 @@ function CurrentReport() {
             ''
           ) : (
             <button className='prev-button'>
-              <FaAngleLeft size={45} className='hover' onClick={prevReport} />
+              <FaAngleLeft
+                size={45}
+                className='hover'
+                onClick={() => dispatch(changePointer(-1))}
+              />
             </button>
           )}
           {pointer === reports.length - 1 ? (
             ''
           ) : (
             <button className='next-button'>
-              <FaAngleRight size={45} className='hover' onClick={nextReport} />
+              <FaAngleRight
+                size={45}
+                className='hover'
+                onClick={() => dispatch(changePointer(1))}
+              />
             </button>
           )}
         </>
