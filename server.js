@@ -13,7 +13,9 @@ const app = express();
 app.use(bodyParser.json());
 
 //get databse key
-const db = process.env.API_KEY || require('./config/keys').mongoURI;
+const db =
+  'mongodb+srv://Jakob:jacky007@cluster0.g75qy.mongodb.net/<dbname>?retryWrites=true&w=majority' ||
+  require('./config/keys').mongoURI;
 
 //connect to database
 mongoose
