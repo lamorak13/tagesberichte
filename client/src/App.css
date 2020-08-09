@@ -1,0 +1,195 @@
+/* general styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5fc;
+  font-size: 1rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+.main {
+  width: 80%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px 0 50px 0;
+}
+
+.hover {
+  color: #4e57aa;
+}
+
+.hover:hover {
+  color: #7077bd;
+}
+
+.container {
+  border-radius: 10px;
+  padding: 2em;
+  margin: 20px 0;
+}
+
+.container-shadow {
+  box-shadow: -9px -12px 12px rgba(255, 255, 255, 0.75), 9px 12px 12px rgba(216, 216, 243, 0.5);
+}
+
+.invisible-button {
+  border: none;
+}
+
+/* Header section styling */
+
+header {
+  background-color: white;
+  padding: 2em 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-container {
+  border-radius: 10px;
+  border: solid 1px #4e57aa;
+  padding: 0.75em;
+}
+
+/* Hello Section Styling */
+
+.hello {
+  background-color: #4e57aa;
+  color: white;
+}
+
+/* Current Report Styling */
+
+.current-report {
+  background-color: white;
+  margin: 40px 0 60px 0;
+  position: relative;
+}
+
+.current-report_header {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.current-report_date {
+  font-size: 12px;
+}
+
+.current-report_body {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+  gap: 2em;
+}
+
+.report-item-container {
+  width: 25%;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: -50px;
+}
+
+.next-button {
+  right: -50px;
+}
+
+/* Options Section Styling */
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10em;
+}
+
+.person-option {
+  flex-grow: 3;
+}
+
+.person-select {
+  padding: 1em 2em;
+  background-color: transparent;
+  cursor: pointer;
+  border: solid 1px #4e57aa;
+  margin-top: 20px;
+}
+
+.add-new-report {
+  border: none;
+  background-color: #f5f5fc;
+  border-radius: 50%;
+  padding: 3em;
+  cursor: pointer;
+}
+
+.add-new-report > * {
+  color: #46c7b9;
+}
+
+.add-new-report:hover > * {
+  color: #33a89c;
+}
+
+/* Modal Styling */
+
+.modal-close-button {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  padding: 1em;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: -9px -12px 12px rgba(255, 255, 255, 0.75), 9px 12px 12px rgba(216, 216, 243, 0.5);
+}
+
+.checkboxes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 20px 0;
+}
+
+.text-field-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5em;
+}
+
+.text-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em !important;
+}
+
+.MuiButton-contained {
+  width: 100%;
+  background-color: #4e57aa !important;
+  color: white !important;
+}
