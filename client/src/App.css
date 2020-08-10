@@ -13,6 +13,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.00938em;
+  color: #262845;
 }
 
 .main {
@@ -24,6 +25,7 @@ body {
 
 .hover {
   color: #4e57aa;
+  transition: color 150ms ease-in-out;
 }
 
 .hover:hover {
@@ -56,7 +58,7 @@ header {
 
 .date-container {
   border-radius: 10px;
-  border: solid 1px #4e57aa;
+  border: solid 1px #d8d8f3;
   padding: 0.75em;
 }
 
@@ -70,9 +72,10 @@ header {
 /* Current Report Styling */
 
 .current-report {
-  background-color: white;
   margin: 40px 0 60px 0;
   position: relative;
+  box-shadow: inset -9px -12px 12px rgba(255, 255, 255, 0.75),
+    inset 9px 12px 12px rgba(216, 216, 243, 0.5);
 }
 
 .current-report_header {
@@ -97,6 +100,10 @@ header {
 
 .report-item-container {
   width: 25%;
+}
+
+.current-report-titles {
+  margin-bottom: 1em;
 }
 
 .prev-button,
@@ -132,23 +139,22 @@ header {
 }
 
 .person-select {
-  padding: 1em 2em;
-  background-color: transparent;
-  cursor: pointer;
-  border: solid 1px #4e57aa;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 250px;
+  margin: 20px 0;
 }
 
 .add-new-report {
   border: none;
   background-color: #f5f5fc;
   border-radius: 50%;
-  padding: 3em;
+  padding: 4em;
   cursor: pointer;
 }
 
 .add-new-report > * {
   color: #46c7b9;
+  transition: color 150ms ease-in-out;
 }
 
 .add-new-report:hover > * {

@@ -77,7 +77,7 @@ function Form() {
   return (
     <>
 
-      <Select value={formData.name} onChange={handleChange} name="name">
+      <Select value={formData.name} onChange={handleChange} name="name" className="person-select">
         <MenuItem value="Jakob">Jakob</MenuItem>
         <MenuItem value="Steffi">Steffi</MenuItem>
       </Select>

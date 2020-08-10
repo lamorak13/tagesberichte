@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import { FormControlLabel, Checkbox } from '@material-ui/core';
+import { FormControlLabel, Checkbox, Button } from '@material-ui/core';
 import { FaTimes } from 'react-icons/fa';
 
 function SymptomsModal(props) {
@@ -15,7 +15,7 @@ function SymptomsModal(props) {
 
   const style = {
     overlay: {
-      backgroundColor: 'rgba(255,255,255,.5)',
+      backgroundColor: 'rgba(0,0,0,.1)',
     },
     content: {
       top: '4vw',
@@ -23,7 +23,7 @@ function SymptomsModal(props) {
       right: '20%',
       bottom: 'auto',
       borderRadius: '10px',
-      border: 'solid 1px #D8D8F3',
+      border: 'none',
       padding: '5em',
       backgroundColor: '#f5f5fc',
     },
@@ -31,7 +31,14 @@ function SymptomsModal(props) {
 
   return (
     <>
-      <button onClick={() => setToggleModal(true)}>{sum} von 9 Symptomen</button>
+      <Button
+        variant='contained'
+        size='small'
+        style={{ width: 'auto' }}
+        onClick={() => setToggleModal(true)}
+      >
+        {sum} von 9 Symptomen
+      </Button>
       <Modal isOpen={toggleModal} onRequestClose={() => setToggleModal(false)} style={style}>
         <h1>Symptome</h1>
         <div className='checkboxes-container'>

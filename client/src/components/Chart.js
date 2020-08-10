@@ -4,26 +4,39 @@ import { useSelector } from 'react-redux';
 
 function Chart() {
   const reports = useSelector((state) => state.reports.items);
-  const jakob = reports
-    .filter((report) => report.name === 'Jakob')
-    .map((report) => report.temperatur);
-  const steffi = reports
-    .filter((report) => report.name === 'Steffi')
-    .map((report) => report.temperatur);
+  const name = useSelector((state) => state.reports.person);
+  const selectedReports = reports.filter((report) => report.name === name);
+
+  function getDateFromData(date) {
+    const test = new Date(date);
+    const day = test.getDate();
+    const month = test.getMonth();
+    const year = test.getFullYear();
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return `${day}. ${monthNames[month]}, ${year}`;
+  }
+
+  const labels = selectedReports.map((report) => getDateFromData(report.date));
 
   const data = {
+    labels: labels,
     datasets: [
       {
-        label: 'Jakob',
-        data: jakob,
-        backgroundColor: 'rgba(244,56,39,0.25)',
-        borderColor: 'rgba(244,56,39,.8)',
-        borderWidth: 2,
-        pointBackgroundColor: 'rgba(244,56,39,.8)',
-      },
-      {
-        label: 'Steffi',
-        data: steffi,
+        label: name,
+        data: selectedReports.map((report) => report.temperatur).reverse(),
         backgroundColor: 'rgba(254, 207, 86, 0.25)',
         borderColor: 'rgba(254, 207, 86, 0.8)',
         borderWidth: 2,

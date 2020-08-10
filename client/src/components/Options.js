@@ -14,7 +14,7 @@ function Options() {
 
   const style = {
     overlay: {
-      backgroundColor: 'rgba(255,255,255,.5)',
+      backgroundColor: 'rgba(0,0,0,.1)',
     },
     content: {
       top: '4vw',
@@ -22,7 +22,7 @@ function Options() {
       right: '20%',
       bottom: 'auto',
       borderRadius: '10px',
-      border: 'solid 1px #D8D8F3',
+      border: 'none',
       padding: '5em',
       backgroundColor: '#f5f5fc',
     },
@@ -33,13 +33,18 @@ function Options() {
       <div className='container container-shadow person-option'>
         <h3>Person wählen</h3>
         <p>Willst du den Bericht von Steffi oder Jakob sehen?</p>
-        <Select value={person} onChange={(e) => dispatch(changePerson(e.target.value))} name='name'>
+        <Select
+          value={person}
+          onChange={(e) => dispatch(changePerson(e.target.value))}
+          name='name'
+          className='person-select'
+        >
           <MenuItem value='Jakob'>Jakob</MenuItem>
           <MenuItem value='Steffi'>Steffi</MenuItem>
         </Select>
       </div>
       <button className='add-new-report container-shadow' onClick={() => setToggleModal(true)}>
-        <FaPlus size={35} />
+        <FaPlus size={55} />
       </button>
 
       <Modal isOpen={toggleModal} onRequestClose={() => setToggleModal(false)} style={style}>

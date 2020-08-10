@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaAngleLeft, FaAngleRight, FaRegTrashAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReports, deleteReport, changePointer } from '../redux/reports/reportActions';
@@ -61,19 +61,19 @@ function CurrentReport() {
           </div>
           <div className='current-report_body'>
             <div className='report-item-container'>
-              <h3>Temperatur</h3>
+              <h3 className='current-report-titles'>Temperatur</h3>
               <p>{reports[pointer].temperatur}</p>
             </div>
             <div className='report-item-container'>
-              <h3>Symptome</h3>
+              <h3 className='current-report-titles'>Symptome</h3>
               <SympomsModal report={reports[pointer]} />
             </div>
             <div className='report-item-container'>
-              <h3>Anmerkungen</h3>
+              <h3 className='current-report-titles'>Anmerkungen</h3>
               <p>{reports[pointer].anmerkung}</p>
             </div>
             <div className='report-item-container'>
-              <h3>Nachricht an Dich</h3>
+              <h3 className='current-report-titles'>Nachricht an Dich</h3>
               <p>{reports[pointer].nachricht}</p>
             </div>
           </div>
